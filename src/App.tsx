@@ -1,16 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import SignUpUniversity from "./pages/Signup-University";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 import SignUpLectureAndStudent from "./pages/Signup-LectureandStudent";
+import SignUpUniversity from "./pages/Signup-University"; // Buat file ini sesuai desain sign in
 
 function App() {
   return (
-    <>
-      {/* <SignUpUniversity /> */}
-      <SignUpLectureAndStudent />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<SignUpLectureAndStudent />} />
+        <Route path="/signin" element={<SignUpUniversity />} />
+      </Routes>
+    </Router>
   );
 }
 
